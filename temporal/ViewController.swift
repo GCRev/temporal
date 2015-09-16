@@ -13,6 +13,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        println("\(GHMasterControl.sharedInstance())")
+        let testView = GHView(frame: CGRectZero)
+        view.addSubview(testView)
+        testView.removeFromSuperview()
     }
 
     override func didReceiveMemoryWarning() {

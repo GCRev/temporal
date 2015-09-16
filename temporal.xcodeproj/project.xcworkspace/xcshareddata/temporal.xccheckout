@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0A591ABD-FFA5-4D35-B9D1-C252C843589B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5AC1F17C950EFF8DEE3CF33DC10FDE7030287815</key>
+		<string>https://github.com/GrahamCrackers42/temporal.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>temporal.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5AC1F17C950EFF8DEE3CF33DC10FDE7030287815</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/GrahamCrackers42/temporal.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5AC1F17C950EFF8DEE3CF33DC10FDE7030287815</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5AC1F17C950EFF8DEE3CF33DC10FDE7030287815</string>
+			<key>IDESourceControlWCCName</key>
+			<string>temporal</string>
+		</dict>
+	</array>
+</dict>
+</plist>
