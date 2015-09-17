@@ -7,12 +7,16 @@
 //
 
 import Foundation
+import UIKit
 
 protocol GHMCProtocol : class
 {
     func play()
     func pause()
     func stop()
+    func getMaxSize() -> CGSize //gets the size of the all the subNodes based on max x and y coords.
+                                //takes the local origin into account
+    func getView() -> GHView
 }
 
 class GHMasterControl:NSObject
@@ -21,6 +25,7 @@ class GHMasterControl:NSObject
     static let cntrl = GHMasterControl()
     private var targs:[GHMCProtocol] = []
     private var bpm:Double = TMPL_DEFAULT_BPM
+    private var margin:CGFloat = TMPL_DEFAULT_MARGIN
 
     class func sharedInstance() -> GHMasterControl {
         return cntrl
@@ -45,6 +50,10 @@ class GHMasterControl:NSObject
 
     func getBPM() -> Double {
         return bpm
+    }
+
+    func getMargin() -> CGFloat {
+        return margin
     }
 
     func play(){

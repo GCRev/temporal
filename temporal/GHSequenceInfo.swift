@@ -24,7 +24,7 @@ class GHSequenceInfo:NSObject
     var beats:Int!
     var noteType:UInt32!
 
-    init(bpm:Double, beats:Int, noteType:UInt32){
+    init(bpm:Double = 0, beats:Int = 4, noteType:UInt32 = 4){
         super.init()
         self.bpmOffset = bpm - GHMasterControl.sharedInstance().getBPM()
         self.beats = beats

@@ -42,6 +42,23 @@ class GHView:UIView, GHMCProtocol
 //        println("\(mcIndex)")
 //    }
 
+    func getMaxSize() -> CGSize {
+        var result = CGSizeZero
+        if (childNodes.count > 0){
+            for node in childNodes {
+                result = CGSizeMake(max(result.w, node.getMaxSize().w), max(result.h, node.getMaxSize().h))
+            }
+        }
+        else {
+            result = CGSizeMake(frame.size.w + frame.origin.x, frame.size.h + frame.origin.y)
+        }
+        return result
+    }
+
+    func getView() -> GHView {
+        return self;
+    }
+
     func play() {
         for node in childNodes {
             node.play()

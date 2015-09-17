@@ -14,9 +14,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         println("\(GHMasterControl.sharedInstance())")
-        let testView = GHView(frame: CGRectZero)
+        let testView = newTestSeqNode()
         view.addSubview(testView)
-        testView.removeFromSuperview()
+
+        let testView2 = newTestSeqNode()
+
+        testView.addChildView(testView2)
+        testView.addChildView(newTestSeqNode())
+
+        testView2.addChildView(newTestSeqNode())
+        testView2.addChildView(newTestSeqNode())
+        
+        testView.layoutChildNodes()
     }
 
     override func didReceiveMemoryWarning() {

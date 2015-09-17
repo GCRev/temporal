@@ -88,6 +88,16 @@ extension CGPoint {
     var nx:CGPoint {return CGPointMake(-self.x, self.y)}
     var ny:CGPoint {return CGPointMake(self.x, -self.y)}
 }
+
+extension CGSize {
+    var h:CGFloat {return height}
+    var w:CGFloat {return width}
+}
+
+func CGSizeMake(squareSize:CGFloat) -> CGSize{
+    return CGSizeMake(squareSize, squareSize)
+}
+
 func CGPointOffset(p1:CGPoint, p2:CGPoint) -> CGPoint{
     var diffx:CGFloat = p1.x-p2.x
     var diffy:CGFloat = p1.y-p2.y
