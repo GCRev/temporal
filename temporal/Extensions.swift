@@ -40,24 +40,24 @@ extension UIColor {
         return UIColor(red: r, green: g, blue: b, alpha: 1.0)
     }
     class func lerp(color1:UIColor, color2:UIColor, fac:CGFloat) -> UIColor{
-        var neg:CGFloat = 1.0-fac
-        var c1 = CGColorGetComponents(color1.CGColor)
-        var c2 = CGColorGetComponents(color2.CGColor)
-        var r:CGFloat = (c1[0] * neg) + (c2[0] * fac)
-        var g:CGFloat = (c1[1] * neg) + (c2[1] * fac)
-        var b:CGFloat = (c1[2] * neg) + (c2[2] * fac)
-        var a:CGFloat = (c1[3] * neg) + (c2[3] * fac)
+        let neg:CGFloat = 1.0-fac
+        let c1 = CGColorGetComponents(color1.CGColor)
+        let c2 = CGColorGetComponents(color2.CGColor)
+        let r:CGFloat = (c1[0] * neg) + (c2[0] * fac)
+        let g:CGFloat = (c1[1] * neg) + (c2[1] * fac)
+        let b:CGFloat = (c1[2] * neg) + (c2[2] * fac)
+        let a:CGFloat = (c1[3] * neg) + (c2[3] * fac)
         return UIColor(red: r, green: g, blue: b, alpha: a)
     }
     class func colorIsLight(color:UIColor) -> Bool {
 
         // Counting the perceptive luminance
         // human eye favors green color...
-        var c = CGColorGetComponents(color.CGColor)
-        var r = c[0]
-        var g = c[1]
-        var b = c[2]
-        var a = 1 - (0.299 * r + 0.587 * g + 0.114 * b);
+        let c = CGColorGetComponents(color.CGColor)
+        let r = c[0]
+        let g = c[1]
+        let b = c[2]
+        let a = 1 - (0.299 * r + 0.587 * g + 0.114 * b);
         return (a < 0.5);
     }
 }
@@ -99,21 +99,21 @@ func CGSizeMake(squareSize:CGFloat) -> CGSize{
 }
 
 func CGPointOffset(p1:CGPoint, p2:CGPoint) -> CGPoint{
-    var diffx:CGFloat = p1.x-p2.x
-    var diffy:CGFloat = p1.y-p2.y
+    let diffx:CGFloat = p1.x-p2.x
+    let diffy:CGFloat = p1.y-p2.y
     return CGPointMake(diffx, diffy)
 }
 
 func CGRectPlace(rect:CGRect, x:CGFloat, y:CGFloat) -> CGRect{
-    return CGRectPlace(rect, CGPoint(x: x, y: y))
+    return CGRectPlace(rect, point: CGPoint(x: x, y: y))
 }
 func CGRectPlace(rect:CGRect, point:CGPoint) -> CGRect{
     return CGRect(origin: point, size: rect.size)
 }
 func signum(x:CGFloat) -> CGFloat{
     if (x != 0){
-        var y = abs(x)
-        var fuckMeSideways = x/y
+        let y = abs(x)
+        let fuckMeSideways = x/y
         return fuckMeSideways
     } else {
         return 0
@@ -124,7 +124,7 @@ func toggle(b:Bool) -> Bool{
 }
 extension UIBezierPath{
     convenience init(circleOutRect: CGRect){
-        var cunt = circleOutRect.diagonal
+        let cunt = circleOutRect.diagonal
         self.init(ovalInRect: CGRectMake(-(cunt-circleOutRect.width)/2.0, -(cunt-circleOutRect.height)/2.0, cunt, cunt))
     }
 }

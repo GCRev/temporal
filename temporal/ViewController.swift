@@ -10,22 +10,33 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var contentScrollView:UIScrollView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        println("\(GHMasterControl.sharedInstance())")
-        let testView = newTestSeqNode()
-        view.addSubview(testView)
+        print("\(GHMasterControl.sharedInstance())")
 
-        let testView2 = newTestSeqNode()
+        let masterNode = GHSequenceNode(frame: CGRectMake(view.frame.width/2.0-24, 24, 48, 48), seq: GHSequenceInfo())
+        GHMasterControl.sharedInstance().addTarg(masterNode)
+        GHMasterControl.sharedInstance().masterNode = masterNode
+        masterNode.setRemovable(false)
 
-        testView.addChildView(testView2)
-        testView.addChildView(newTestSeqNode())
 
-        testView2.addChildView(newTestSeqNode())
-        testView2.addChildView(newTestSeqNode())
-        
-        testView.layoutChildNodes()
+        view.backgroundColor = GHMasterControl.sharedInstance().theme.themeCol1
+
+        let GUI = GHMasterGUI(frame: view.frame)
+        view.addSubview(GUI)
+        GUI.addChildView(masterNode)
+
+        GHMasterControl.sharedInstance().addTarg(GUI)
+
+        let tap = UITapGestureRecognizer(target: self, action: "bgTap")
+        view.addGestureRecognizer(tap)
+
+        contentScrollView = UIScrollView(frame: CGRectMake(0,30,view.frame.width,view.frame.height-30))
+        contentScrollView.clipsToBounds = true
+        view.addSubview(contentScrollView)
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +44,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func bgTap()
+    {
+        GHMasterControl.sharedInstance().getSelection().deselectAll()
+    }
 
 }
 

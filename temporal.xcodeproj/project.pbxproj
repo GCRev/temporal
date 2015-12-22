@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		356BB4821BABBBAB002E2618 /* GHMasterGUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356BB4811BABBBAB002E2618 /* GHMasterGUI.swift */; };
+		356BB4841BABBF04002E2618 /* GHPlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356BB4831BABBF04002E2618 /* GHPlayButton.swift */; };
+		356BB4861BAD1C86002E2618 /* GHNodeTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356BB4851BAD1C86002E2618 /* GHNodeTools.swift */; };
+		356BB4881BBF324B002E2618 /* GHNodeSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356BB4871BBF324B002E2618 /* GHNodeSelection.swift */; };
+		356BB48A1BBF74CD002E2618 /* GHButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356BB4891BBF74CD002E2618 /* GHButton.swift */; };
+		35C2E3871BBF81B000B424E4 /* GHPlusMinusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C2E3861BBF81B000B424E4 /* GHPlusMinusButton.swift */; };
+		35C2E38A1BC8762900B424E4 /* HiPing.wav in Resources */ = {isa = PBXBuildFile; fileRef = 35C2E3881BC8762900B424E4 /* HiPing.wav */; };
+		35C2E38B1BC8762900B424E4 /* LoPing.wav in Resources */ = {isa = PBXBuildFile; fileRef = 35C2E3891BC8762900B424E4 /* LoPing.wav */; };
+		35C2E38D1BC87B6100B424E4 /* GHAudioPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C2E38C1BC87B6100B424E4 /* GHAudioPrefs.swift */; };
 		35CBDF731BA78ACB00466420 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CBDF721BA78ACB00466420 /* AppDelegate.swift */; };
 		35CBDF751BA78ACB00466420 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CBDF741BA78ACB00466420 /* ViewController.swift */; };
 		35CBDF781BA78ACB00466420 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35CBDF761BA78ACB00466420 /* Main.storyboard */; };
@@ -32,6 +41,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		356BB4811BABBBAB002E2618 /* GHMasterGUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GHMasterGUI.swift; sourceTree = "<group>"; };
+		356BB4831BABBF04002E2618 /* GHPlayButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GHPlayButton.swift; sourceTree = "<group>"; };
+		356BB4851BAD1C86002E2618 /* GHNodeTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GHNodeTools.swift; sourceTree = "<group>"; };
+		356BB4871BBF324B002E2618 /* GHNodeSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GHNodeSelection.swift; sourceTree = "<group>"; };
+		356BB4891BBF74CD002E2618 /* GHButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GHButton.swift; sourceTree = "<group>"; };
+		35C2E3861BBF81B000B424E4 /* GHPlusMinusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GHPlusMinusButton.swift; sourceTree = "<group>"; };
+		35C2E3881BC8762900B424E4 /* HiPing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HiPing.wav; sourceTree = "<group>"; };
+		35C2E3891BC8762900B424E4 /* LoPing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LoPing.wav; sourceTree = "<group>"; };
+		35C2E38C1BC87B6100B424E4 /* GHAudioPrefs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GHAudioPrefs.swift; sourceTree = "<group>"; };
 		35CBDF6D1BA78ACB00466420 /* Temporal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Temporal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35CBDF711BA78ACB00466420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35CBDF721BA78ACB00466420 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,7 +112,14 @@
 				35CBDF921BA78BFC00466420 /* GHView.swift */,
 				35CBDF9E1BA8D09F00466420 /* GHSequenceNode.swift */,
 				35CBDFA01BA8DA1C00466420 /* GHSequenceInfo.swift */,
+				356BB4851BAD1C86002E2618 /* GHNodeTools.swift */,
+				356BB4871BBF324B002E2618 /* GHNodeSelection.swift */,
+				356BB4811BABBBAB002E2618 /* GHMasterGUI.swift */,
+				356BB4831BABBF04002E2618 /* GHPlayButton.swift */,
+				35C2E3861BBF81B000B424E4 /* GHPlusMinusButton.swift */,
+				356BB4891BBF74CD002E2618 /* GHButton.swift */,
 				35CBDF9A1BA79C4100466420 /* GHMasterControl.swift */,
+				35C2E38C1BC87B6100B424E4 /* GHAudioPrefs.swift */,
 				35CBDF9C1BA79D5100466420 /* Globals.swift */,
 				35CBDF941BA78C5600466420 /* Extensions.swift */,
 				35CBDF761BA78ACB00466420 /* Main.storyboard */,
@@ -108,6 +133,8 @@
 		35CBDF701BA78ACB00466420 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				35C2E3881BC8762900B424E4 /* HiPing.wav */,
+				35C2E3891BC8762900B424E4 /* LoPing.wav */,
 				35CBDF711BA78ACB00466420 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -174,11 +201,14 @@
 		35CBDF651BA78ACB00466420 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Latch Creative";
 				TargetAttributes = {
 					35CBDF6C1BA78ACB00466420 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = SCFH62L344;
 					};
 					35CBDF811BA78ACB00466420 = {
 						CreatedOnToolsVersion = 6.4;
@@ -211,6 +241,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				35CBDF781BA78ACB00466420 /* Main.storyboard in Resources */,
+				35C2E38A1BC8762900B424E4 /* HiPing.wav in Resources */,
+				35C2E38B1BC8762900B424E4 /* LoPing.wav in Resources */,
 				35CBDF7D1BA78ACB00466420 /* LaunchScreen.xib in Resources */,
 				35CBDF7A1BA78ACB00466420 /* Images.xcassets in Resources */,
 			);
@@ -230,11 +262,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35C2E38D1BC87B6100B424E4 /* GHAudioPrefs.swift in Sources */,
 				35CBDF931BA78BFC00466420 /* GHView.swift in Sources */,
+				356BB4881BBF324B002E2618 /* GHNodeSelection.swift in Sources */,
+				356BB4821BABBBAB002E2618 /* GHMasterGUI.swift in Sources */,
 				35CBDF9B1BA79C4100466420 /* GHMasterControl.swift in Sources */,
 				35CBDF9D1BA79D5100466420 /* Globals.swift in Sources */,
+				356BB48A1BBF74CD002E2618 /* GHButton.swift in Sources */,
+				356BB4861BAD1C86002E2618 /* GHNodeTools.swift in Sources */,
 				35CBDFA11BA8DA1C00466420 /* GHSequenceInfo.swift in Sources */,
 				35CBDF751BA78ACB00466420 /* ViewController.swift in Sources */,
+				35C2E3871BBF81B000B424E4 /* GHPlusMinusButton.swift in Sources */,
+				356BB4841BABBF04002E2618 /* GHPlayButton.swift in Sources */,
 				35CBDF731BA78ACB00466420 /* AppDelegate.swift in Sources */,
 				35CBDF951BA78C5600466420 /* Extensions.swift in Sources */,
 				35CBDF9F1BA8D09F00466420 /* GHSequenceNode.swift in Sources */,
@@ -366,9 +405,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = temporal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Temporal;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -376,9 +418,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = temporal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Temporal;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -435,6 +480,7 @@
 				35CBDF8E1BA78ACB00466420 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		35CBDF8F1BA78ACB00466420 /* Build configuration list for PBXNativeTarget "temporalTests" */ = {
 			isa = XCConfigurationList;
@@ -443,6 +489,7 @@
 				35CBDF911BA78ACB00466420 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

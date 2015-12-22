@@ -18,17 +18,29 @@ enum NoteType: UInt32{
     case SixtyFourth = 64
 }
 
+enum AccentType {
+    case None
+    case Normal
+    case Accent
+}
+
 class GHSequenceInfo:NSObject
 {
-    var bpmOffset:Double! //this is an offset from the master BPM - so master changes are relative through children
-    var beats:Int!
+    private var bpmOffset:Double! //this is an offset from the master BPM - so master changes are relative through children
+    private var beats:Int!
     var noteType:UInt32!
+    var numRepeats:UInt16!
+    var totalLength:Double = 0.0
+    var accentType:AccentType = .Normal
+    private var numPlays:UInt16 = 0
 
-    init(bpm:Double = 0, beats:Int = 4, noteType:UInt32 = 4){
+    init(bpm:Double = 0, beats:Int = 1, noteType:UInt32 = 4, numRepeats:UInt16 = 0, accentType:AccentType = .Normal){
         super.init()
-        self.bpmOffset = bpm - GHMasterControl.sharedInstance().getBPM()
+        self.bpmOffset = bpm
         self.beats = beats
         self.noteType = noteType
+        self.numRepeats = numRepeats
+        self.accentType = accentType
     }
 
     convenience init(bpm:Double, beats:Int, noteType:NoteType){
@@ -41,5 +53,35 @@ class GHSequenceInfo:NSObject
 
     func setBPM(newBPM:Double) {
         bpmOffset = newBPM - GHMasterControl.sharedInstance().getBPM()
+    }
+
+    func setBeats(num:Int)
+    {
+        beats = max(1,num)
+    }
+
+    func incrementNumPlays() -> Bool
+    {
+        numPlays += 1
+        if (numPlays > numRepeats)
+        {
+            resetNumPlays()
+        }
+        return numPlays > numRepeats
+    }
+
+    func resetNumPlays()
+    {
+        numPlays = 0
+    }
+
+    func calculateTime() -> Double
+    {
+        var result:Double = 0.0
+        //beats per second *
+        result = (getBPM()/60) / Double(noteType) * Double(beats) * Double(numRepeats + 1)
+        print(result)
+        totalLength = result
+        return result
     }
 }

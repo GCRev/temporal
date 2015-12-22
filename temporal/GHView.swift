@@ -13,15 +13,16 @@ class GHView:UIView, GHMCProtocol
 {
 
     var mcIndex:Int?
-    var childNodes:[GHMCProtocol]!
-    var parent:GHView?
+    var childNodes:[GHView] = [];
+    private var parent:GHView?
+    private var removable = true
+    var anchor:CGPoint = CGPointZero
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        childNodes = [];
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -33,8 +34,47 @@ class GHView:UIView, GHMCProtocol
     }
 
     func removeChildView(view: GHView){
-        childNodes.removeAtIndex(view.mcIndex!)
-        view.removeFromSuperview()
+        if (view.removable)
+        {
+            childNodes.removeAtIndex(view.mcIndex!)
+            view.removeFromSuperview()
+        }
+        rebrandChildren()
+    }
+
+    func rebrandChildren()
+    {
+        for (var a = 0; a < childNodes.count; a++)
+        {
+            let node = childNodes[a];
+            node.mcIndex = a;
+        }
+    }
+
+    func getParent() ->GHView?
+    {
+        return parent
+    }
+
+    func setRemovable(r:Bool){
+        removable = r;
+    }
+
+    func getRemovable() -> Bool
+    {
+        return removable
+    }
+
+    func removeFromParent(){
+        if (removable && parent != nil)
+        {
+            parent!.removeChildView(self)
+        }
+
+        if (parent == nil)
+        {
+            print("View: \(self) has no parent.")
+        }
     }
 
 //    deinit {
@@ -42,9 +82,16 @@ class GHView:UIView, GHMCProtocol
 //        println("\(mcIndex)")
 //    }
 
+    func selectionChanged(){
+        for node in childNodes
+        {
+            node.selectionChanged()
+        }
+    }
+
     func getMaxSize() -> CGSize {
         var result = CGSizeZero
-        if (childNodes.count > 0){
+        if (hasChildren()){
             for node in childNodes {
                 result = CGSizeMake(max(result.w, node.getMaxSize().w), max(result.h, node.getMaxSize().h))
             }
@@ -55,6 +102,10 @@ class GHView:UIView, GHMCProtocol
         return result
     }
 
+    func hasChildren() -> Bool {
+        return childNodes.count > 0
+    }
+
     func getView() -> GHView {
         return self;
     }
@@ -62,6 +113,17 @@ class GHView:UIView, GHMCProtocol
     func play() {
         for node in childNodes {
             node.play()
+        }
+    }
+
+    func playFirst()
+    {
+        if hasChildren()
+        {
+        let node = childNodes[0]
+            node.playFirst()
+        } else {
+            play()
         }
     }
 
@@ -75,6 +137,27 @@ class GHView:UIView, GHMCProtocol
         for node in childNodes {
             node.stop()
         }
+    }
+
+    func update(deltaT:Double)
+    {
+        for node in childNodes
+        {
+            node.update(deltaT)
+        }
+    }
+
+    func draw()
+    {
+        for node in childNodes
+        {
+            node.draw()
+        }
+    }
+
+    func done()
+    {
+        
     }
 
 }
